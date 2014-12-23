@@ -19,11 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\utility\vs2013\evolution_utility.vcxproj">
-      <Project>{d8293f0e-1868-4cf6-b099-6eff4dbc2ef9}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\evolution_framework_interface.h" />
     <ClInclude Include="..\evolution_framework_result.h" />
     <ClInclude Include="..\gameobject\evolution_gameobject_implement.h" />
@@ -33,9 +28,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\gameobject\function\create_box.cpp" />
+    <ClCompile Include="..\gameobject\function\create_plate.cpp" />
     <ClCompile Include="..\gameobject\function\create_sphere.cpp" />
     <ClCompile Include="..\gameobject\mesh\mesh.cpp" />
     <ClCompile Include="..\gameobject\vertex_property\vertex_property.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\evolution-core\vs2013\evolution_core.vcxproj">
+      <Project>{9e6fb115-8d55-4a88-8a54-63d40aac73f1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\evolution-utility\vs2013\evolution_utility.vcxproj">
+      <Project>{d8293f0e-1868-4cf6-b099-6eff4dbc2ef9}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4C02CA10-2F29-4773-8520-7A8C91F6388D}</ProjectGuid>

@@ -57,6 +57,22 @@ FrameworkResult::_RESULT Mesh::Create(EVOLUTION::GRAPHIC::IGraphicFactory* graph
     return FrameworkResult::RESULT_OK;
 }
 
+FrameworkResult::_RESULT Mesh::Create(EVOLUTION::GRAPHIC::IGraphicFactory* graphic_factory, EVOLUTION::GRAPHIC::IGraphicCommand* command, const u16* index_buffer, u32 vertex_count){
+    if (EVOLUTION_FAILED(graphic_factory->CreateIndexBuffer(&this->mp_index_buffer, command, index_buffer, vertex_count)))
+    {
+        return FrameworkResult::CREATE_FAILED;
+    }
+    return FrameworkResult::RESULT_OK;
+}
+
+FrameworkResult::_RESULT Mesh::Create(EVOLUTION::GRAPHIC::IGraphicFactory* graphic_factory, EVOLUTION::GRAPHIC::IGraphicCommand* command, const u32* index_buffer, u32 vertex_count){
+    if (EVOLUTION_FAILED(graphic_factory->CreateIndexBuffer(&this->mp_index_buffer, command, index_buffer, vertex_count)))
+    {
+        return FrameworkResult::CREATE_FAILED;
+    }
+    return FrameworkResult::RESULT_OK;
+}
+
 void Mesh::GetVertexProperty(IVertexProperty** vertex_property){
     *vertex_property = this->mp_vertex_property;
     this->mp_vertex_property->AddRef();
