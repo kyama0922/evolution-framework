@@ -27,6 +27,8 @@ namespace EVOLUTION{
                 ~Mesh();
 
                 FrameworkResult::_RESULT Create(EVOLUTION::GRAPHIC::IGraphicFactory* graphic_factory, EVOLUTION::GRAPHIC::IGraphicCommand* command, IVertexProperty* vertex_property, void* vertex_buffer, u32 vertex_count);
+                FrameworkResult::_RESULT Create(EVOLUTION::GRAPHIC::IGraphicFactory* graphic_factory, EVOLUTION::GRAPHIC::IGraphicCommand* command, const u16* index_buffer, u32 vertex_count);
+                FrameworkResult::_RESULT Create(EVOLUTION::GRAPHIC::IGraphicFactory* graphic_factory, EVOLUTION::GRAPHIC::IGraphicCommand* command, const u32* index_buffer, u32 vertex_count);
 
                 void GetVertexProperty(IVertexProperty** vertex_property);
                 void GetVertexBuffer(EVOLUTION::GRAPHIC::IBuffer** vertex_buffer);

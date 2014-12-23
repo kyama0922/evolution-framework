@@ -5,7 +5,7 @@ using namespace EVOLUTION::FRAMEWORK;
 using namespace EVOLUTION::FRAMEWORK::GAMEOBJECT;
 
 FrameworkResult::_RESULT EVOLUTION::FUNCTION::CreateBox(FRAMEWORK::GAMEOBJECT::IMesh** pp_mesh, u32 width, u32 height, u32 depth, EVOLUTION::GRAPHIC::IGraphicFactory* graphic_factory, EVOLUTION::GRAPHIC::IGraphicCommand* command){
-
+    *pp_mesh = nullptr;
     VertexProperty* vertex_property = NEW VertexProperty();
 
     EVOLUTION::FRAMEWORK::GAMEOBJECT::VERTEX_PROPERTY::_PROPERTY work[] = {
@@ -64,13 +64,41 @@ FrameworkResult::_RESULT EVOLUTION::FUNCTION::CreateBox(FRAMEWORK::GAMEOBJECT::I
         { Vector3(max.x, min.y, max.z), Vector3(0.0f, -1.0f, 0.0f) },
     };
 
-    if (EVOLUTION_FAILED( mesh->Create(graphic_factory, command, vertex_property, work_vertex, EVOLUTION_ARRAYSIZE(work_vertex))))
+    //頂点の作成
+    if (EVOLUTION_FAILED(mesh->Create(graphic_factory, command, vertex_property, work_vertex, EVOLUTION_ARRAYSIZE(work_vertex))))
     {
+        EVOLUTION_RELEASE(vertex_property);
         EVOLUTION_RELEASE(mesh);
+        return FrameworkResult::CREATE_FAILED;
     }
     EVOLUTION_RELEASE(vertex_property);
-    *pp_mesh = mesh;
 
+    u16 indexes[36];
+    for (s32 i = 0; i < 6; i++)
+    {
+        s32 array_index = i * 6;
+        s32 index = i * 4;
+        u16* p = &indexes[array_index];
+
+        *p++ = index;
+        *p++ = index + 1;
+        *p++ = index + 3;
+
+        *p++ = index + 3;
+        *p++ = index + 2;
+        *p = index;
+
+    }
+
+
+    //インデックスの作成
+    if (EVOLUTION_FAILED(mesh->Create(graphic_factory, command, indexes, EVOLUTION_ARRAYSIZE(indexes))))
+    {
+        EVOLUTION_RELEASE(mesh);
+        return FrameworkResult::CREATE_FAILED;
+    }
+
+    *pp_mesh = mesh;
     return FrameworkResult::RESULT_OK;
 }
 

@@ -58,5 +58,8 @@
     <ClCompile Include="..\gameobject\function\create_sphere.cpp">
       <Filter>gameobject\function</Filter>
     </ClCompile>
+    <ClCompile Include="..\gameobject\function\create_plate.cpp">
+      <Filter>gameobject\function</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
