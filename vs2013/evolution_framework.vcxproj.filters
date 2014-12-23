@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="gameobject">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="interface">
+      <UniqueIdentifier>{ea08ee38-65fd-49ec-90c4-c425ec089d06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameobject\mesh">
+      <UniqueIdentifier>{2a552226-1ded-4a9f-acc7-bd74804c5193}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameobject\texture_manager">
+      <UniqueIdentifier>{5849a9f1-53c6-460c-870a-89368d116696}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameobject\vertex_property">
+      <UniqueIdentifier>{8674f3ba-7c11-4478-bd78-e511a12f3a10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameobject\function">
+      <UniqueIdentifier>{896096aa-2be9-4624-b705-1ba7e906e2ef}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\evolution_framework_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameobject\evolution_gameobject_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\evolution_framework_result.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameobject\mesh\mesh.h">
+      <Filter>gameobject\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameobject\vertex_property\vertex_property.h">
+      <Filter>gameobject\vertex_property</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gameobject\evolution_gameobject_implement.h">
+      <Filter>gameobject</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\gameobject\mesh\mesh.cpp">
+      <Filter>gameobject\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameobject\vertex_property\vertex_property.cpp">
+      <Filter>gameobject\vertex_property</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameobject\function\create_box.cpp">
+      <Filter>gameobject\function</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameobject\function\create_sphere.cpp">
+      <Filter>gameobject\function</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
