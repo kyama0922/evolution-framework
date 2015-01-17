@@ -61,5 +61,8 @@
     <ClCompile Include="..\gameobject\function\create_plate.cpp">
       <Filter>gameobject\function</Filter>
     </ClCompile>
+    <ClCompile Include="..\gameobject\function\create_axis.cpp">
+      <Filter>gameobject\function</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

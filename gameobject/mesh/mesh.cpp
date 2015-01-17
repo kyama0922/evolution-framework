@@ -37,13 +37,14 @@ u32 Mesh::Release(){
     return counter;
 }
 
-Mesh::Mesh(){
+Mesh::Mesh() : mp_vertex_property(nullptr), mp_vertex_buffer(nullptr), mp_index_buffer(nullptr){
 
 }
 
 Mesh::~Mesh(){
     EVOLUTION_RELEASE(this->mp_vertex_property);
     EVOLUTION_RELEASE(this->mp_vertex_buffer);
+    EVOLUTION_RELEASE(this->mp_index_buffer);
 }
 
 FrameworkResult::_RESULT Mesh::Create(EVOLUTION::GRAPHIC::IGraphicFactory* graphic_factory, EVOLUTION::GRAPHIC::IGraphicCommand* command, IVertexProperty* vertex_property, void* vertex_buffer , u32 vertex_count){
@@ -73,14 +74,33 @@ FrameworkResult::_RESULT Mesh::Create(EVOLUTION::GRAPHIC::IGraphicFactory* graph
     return FrameworkResult::RESULT_OK;
 }
 
+void Mesh::SetPrimitiveTopology(EVOLUTION::GRAPHIC::PRIMITIVE_TOPOLOGY::_PRIMITIVE_TOPOLOGY primitive_topology){
+    this->m_primitive_topology = primitive_topology;
+}
+
+EVOLUTION::GRAPHIC::PRIMITIVE_TOPOLOGY::_PRIMITIVE_TOPOLOGY Mesh::GetPrimitiveTopology()const{
+    return this->m_primitive_topology;
+}
+
 void Mesh::GetVertexProperty(IVertexProperty** vertex_property){
     *vertex_property = this->mp_vertex_property;
     this->mp_vertex_property->AddRef();
 }
 void Mesh::GetVertexBuffer(EVOLUTION::GRAPHIC::IBuffer** vertex_buffer){
-    this->mp_vertex_buffer->QueryInterface(EVOLUTION::EVOLUTION_GUID::IID_IBuffer, (void**)vertex_buffer);
+    if (this->mp_vertex_buffer)
+    {
+        this->mp_vertex_buffer->QueryInterface(EVOLUTION::EVOLUTION_GUID::IID_IBuffer, (void**)vertex_buffer);
+        return;
+    }
+    *vertex_buffer = nullptr;
 }
 
 void Mesh::GetIndexBuffer(EVOLUTION::GRAPHIC::IBuffer** index_buffer){
-    this->mp_index_buffer->QueryInterface(EVOLUTION::EVOLUTION_GUID::IID_IBuffer, (void**)index_buffer);
+    if (this->mp_index_buffer)
+    {
+        this->mp_index_buffer->QueryInterface(EVOLUTION::EVOLUTION_GUID::IID_IBuffer, (void**)index_buffer);
+        return;
+    }
+    *index_buffer = nullptr;
 }
+

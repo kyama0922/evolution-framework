@@ -17,6 +17,7 @@ namespace EVOLUTION{
                 virtual void GetVertexProperty(IVertexProperty** vertex_property) = 0;
                 virtual void GetVertexBuffer(EVOLUTION::GRAPHIC::IBuffer** buffer) = 0;
                 virtual void GetIndexBuffer(EVOLUTION::GRAPHIC::IBuffer** index_buffer) = 0;
+                virtual EVOLUTION::GRAPHIC::PRIMITIVE_TOPOLOGY::_PRIMITIVE_TOPOLOGY GetPrimitiveTopology()const=0;
             };
 
         }
@@ -29,6 +30,8 @@ namespace EVOLUTION{
         extern FRAMEWORK::FrameworkResult::_RESULT CreatePlate(FRAMEWORK::GAMEOBJECT::IMesh** pp_mesh, f32 w, u32 h, u32 d, EVOLUTION::GRAPHIC::IGraphicFactory* graphic_factory, EVOLUTION::GRAPHIC::IGraphicCommand* command);
         //スフィアの作成
         extern FRAMEWORK::FrameworkResult::_RESULT CreateSphere(FRAMEWORK::GAMEOBJECT::IMesh** pp_mesh, f32 Radius, u32 Slices, u32 Stacks, EVOLUTION::GRAPHIC::IGraphicFactory* graphic_factory, EVOLUTION::GRAPHIC::IGraphicCommand* command);
+        //軸の作成
+        extern FRAMEWORK::FrameworkResult::_RESULT CreateAxis(FRAMEWORK::GAMEOBJECT::IMesh** pp_mesh, EVOLUTION::GRAPHIC::IGraphicFactory* graphic_factory, EVOLUTION::GRAPHIC::IGraphicCommand* command);
 
     }
 }

@@ -19,6 +19,7 @@ FrameworkResult::_RESULT EVOLUTION::FUNCTION::CreateBox(FRAMEWORK::GAMEOBJECT::I
     struct _WORK_VERTEX{
         Vector3 position;
         Vector3 normal;
+        Color   color;
     };
 
     Vector3 max, min;
@@ -33,35 +34,35 @@ FrameworkResult::_RESULT EVOLUTION::FUNCTION::CreateBox(FRAMEWORK::GAMEOBJECT::I
     max.z = depth / 2.0f;
 
     _WORK_VERTEX work_vertex[] = {
-        { Vector3(min.x, max.y, min.z), Vector3(0.0f, 0.0f, -1.0f) },
-        { Vector3(max.x, max.y, min.z), Vector3(0.0f, 0.0f, -1.0f) },
-        { Vector3(min.x, min.y, min.z), Vector3(0.0f, 0.0f, -1.0f) },
-        { Vector3(max.x, min.y, min.z), Vector3(0.0f, 0.0f, -1.0f) },
+        { Vector3(min.x, max.y, min.z), Vector3(0.0f, 0.0f, -1.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(max.x, max.y, min.z), Vector3(0.0f, 0.0f, -1.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(min.x, min.y, min.z), Vector3(0.0f, 0.0f, -1.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(max.x, min.y, min.z), Vector3(0.0f, 0.0f, -1.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
 
-        { Vector3(max.x, max.y, max.z), Vector3(0.0f, 0.0f, 1.0f) },
-        { Vector3(min.x, max.y, max.z), Vector3(0.0f, 0.0f, 1.0f) },
-        { Vector3(max.x, min.y, max.z), Vector3(0.0f, 0.0f, 1.0f) },
-        { Vector3(min.x, min.y, max.z), Vector3(0.0f, 0.0f, 1.0f) },
+        { Vector3(max.x, max.y, max.z), Vector3(0.0f, 0.0f, 1.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(min.x, max.y, max.z), Vector3(0.0f, 0.0f, 1.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(max.x, min.y, max.z), Vector3(0.0f, 0.0f, 1.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(min.x, min.y, max.z), Vector3(0.0f, 0.0f, 1.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
 
-        { Vector3(max.x, max.y, min.z), Vector3(1.0f, 0.0f, 0.0f) },
-        { Vector3(max.x, max.y, max.z), Vector3(1.0f, 0.0f, 0.0f) },
-        { Vector3(max.x, min.y, min.z), Vector3(1.0f, 0.0f, 0.0f) },
-        { Vector3(max.x, min.y, max.z), Vector3(1.0f, 0.0f, 0.0f) },
+        { Vector3(max.x, max.y, min.z), Vector3(1.0f, 0.0f, 0.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(max.x, max.y, max.z), Vector3(1.0f, 0.0f, 0.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(max.x, min.y, min.z), Vector3(1.0f, 0.0f, 0.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(max.x, min.y, max.z), Vector3(1.0f, 0.0f, 0.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
 
-        { Vector3(min.x, max.y, max.z), Vector3(-1.0f, 0.0f, 0.0f) },
-        { Vector3(min.x, max.y, min.z), Vector3(-1.0f, 0.0f, 0.0f) },
-        { Vector3(min.x, min.y, max.z), Vector3(-1.0f, 0.0f, 0.0f) },
-        { Vector3(min.x, min.y, min.z), Vector3(-1.0f, 0.0f, 0.0f) },
+        { Vector3(min.x, max.y, max.z), Vector3(-1.0f, 0.0f, 0.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(min.x, max.y, min.z), Vector3(-1.0f, 0.0f, 0.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(min.x, min.y, max.z), Vector3(-1.0f, 0.0f, 0.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(min.x, min.y, min.z), Vector3(-1.0f, 0.0f, 0.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
 
-        { Vector3(min.x, max.y, max.z), Vector3(0.0f, 1.0f, 0.0f) },
-        { Vector3(max.x, max.y, max.z), Vector3(0.0f, 1.0f, 0.0f) },
-        { Vector3(min.x, max.y, min.z), Vector3(0.0f, 1.0f, 0.0f) },
-        { Vector3(max.x, max.y, min.z), Vector3(0.0f, 1.0f, 0.0f) },
+        { Vector3(min.x, max.y, max.z), Vector3(0.0f, 1.0f, 0.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(max.x, max.y, max.z), Vector3(0.0f, 1.0f, 0.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(min.x, max.y, min.z), Vector3(0.0f, 1.0f, 0.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(max.x, max.y, min.z), Vector3(0.0f, 1.0f, 0.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
 
-        { Vector3(min.x, min.y, min.z), Vector3(0.0f, -1.0f, 0.0f) },
-        { Vector3(max.x, min.y, min.z), Vector3(0.0f, -1.0f, 0.0f) },
-        { Vector3(min.x, min.y, max.z), Vector3(0.0f, -1.0f, 0.0f) },
-        { Vector3(max.x, min.y, max.z), Vector3(0.0f, -1.0f, 0.0f) },
+        { Vector3(min.x, min.y, min.z), Vector3(0.0f, -1.0f, 0.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(max.x, min.y, min.z), Vector3(0.0f, -1.0f, 0.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(min.x, min.y, max.z), Vector3(0.0f, -1.0f, 0.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
+        { Vector3(max.x, min.y, max.z), Vector3(0.0f, -1.0f, 0.0f), Color(1.0f, 1.0f, 1.0f, 1.0f) },
     };
 
     //頂点の作成
@@ -90,7 +91,7 @@ FrameworkResult::_RESULT EVOLUTION::FUNCTION::CreateBox(FRAMEWORK::GAMEOBJECT::I
 
     }
 
-
+    mesh->SetPrimitiveTopology(EVOLUTION::GRAPHIC::PRIMITIVE_TOPOLOGY::_TRIANGLELIST);
     //インデックスの作成
     if (EVOLUTION_FAILED(mesh->Create(graphic_factory, command, indexes, EVOLUTION_ARRAYSIZE(indexes))))
     {

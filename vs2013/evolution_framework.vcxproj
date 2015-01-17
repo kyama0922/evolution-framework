@@ -27,6 +27,7 @@
     <ClInclude Include="..\gameobject\vertex_property\vertex_property.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\gameobject\function\create_axis.cpp" />
     <ClCompile Include="..\gameobject\function\create_box.cpp" />
     <ClCompile Include="..\gameobject\function\create_plate.cpp" />
     <ClCompile Include="..\gameobject\function\create_sphere.cpp" />
