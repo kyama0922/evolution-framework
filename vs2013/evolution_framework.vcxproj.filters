@@ -15,14 +15,17 @@
     <Filter Include="gameobject\mesh">
       <UniqueIdentifier>{2a552226-1ded-4a9f-acc7-bd74804c5193}</UniqueIdentifier>
     </Filter>
-    <Filter Include="gameobject\texture_manager">
-      <UniqueIdentifier>{5849a9f1-53c6-460c-870a-89368d116696}</UniqueIdentifier>
-    </Filter>
     <Filter Include="gameobject\vertex_property">
       <UniqueIdentifier>{8674f3ba-7c11-4478-bd78-e511a12f3a10}</UniqueIdentifier>
     </Filter>
     <Filter Include="gameobject\function">
       <UniqueIdentifier>{896096aa-2be9-4624-b705-1ba7e906e2ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameobject\texturemanager">
+      <UniqueIdentifier>{495f3b08-8850-462d-8345-cd248d66697e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gameobject\fpscontroller">
+      <UniqueIdentifier>{653b8c6a-aa4d-498d-88fc-d27ea06373cb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -44,6 +47,9 @@
     <ClInclude Include="..\gameobject\evolution_gameobject_implement.h">
       <Filter>gameobject</Filter>
     </ClInclude>
+    <ClInclude Include="..\gameobject\fpscontroller\fpscontroller.h">
+      <Filter>gameobject\fpscontroller</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\gameobject\mesh\mesh.cpp">
@@ -62,6 +68,12 @@
       <Filter>gameobject\function</Filter>
     </ClCompile>
     <ClCompile Include="..\gameobject\function\create_axis.cpp">
+      <Filter>gameobject\function</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameobject\fpscontroller\fpscontroller.cpp">
+      <Filter>gameobject\fpscontroller</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gameobject\function\create_fps_controller.cpp">
       <Filter>gameobject\function</Filter>
     </ClCompile>
   </ItemGroup>
