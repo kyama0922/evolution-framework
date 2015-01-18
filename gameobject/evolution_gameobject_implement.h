@@ -7,5 +7,6 @@
 
 #include "mesh/mesh.h"
 
+#include "fpscontroller\fpscontroller.h"
 
 #endif

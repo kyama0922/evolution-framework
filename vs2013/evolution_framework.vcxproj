@@ -23,12 +23,15 @@
     <ClInclude Include="..\evolution_framework_result.h" />
     <ClInclude Include="..\gameobject\evolution_gameobject_implement.h" />
     <ClInclude Include="..\gameobject\evolution_gameobject_interface.h" />
+    <ClInclude Include="..\gameobject\fpscontroller\fpscontroller.h" />
     <ClInclude Include="..\gameobject\mesh\mesh.h" />
     <ClInclude Include="..\gameobject\vertex_property\vertex_property.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\gameobject\fpscontroller\fpscontroller.cpp" />
     <ClCompile Include="..\gameobject\function\create_axis.cpp" />
     <ClCompile Include="..\gameobject\function\create_box.cpp" />
+    <ClCompile Include="..\gameobject\function\create_fps_controller.cpp" />
     <ClCompile Include="..\gameobject\function\create_plate.cpp" />
     <ClCompile Include="..\gameobject\function\create_sphere.cpp" />
     <ClCompile Include="..\gameobject\mesh\mesh.cpp" />
