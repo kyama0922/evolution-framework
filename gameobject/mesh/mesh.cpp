@@ -11,12 +11,12 @@ u32 Mesh::AddRef(){
 }
 
 RESULT Mesh::QueryInterface(EVOLUTION::EVOLUTION_IID riid, void **ppvObject){
-    //if (IsEqualGUID(riid, EVOLUTION_GUID::IID_IUnknown))
+    //if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_IUnknown))
     //{
     //    *ppvObject = static_cast<IUnknown *>(this);
     //    this->AddRef();
     //}
-    //else if (IsEqualGUID(riid, EVOLUTION_GUID::IID_BlendStateProperty))
+    //else if (EVOLUTION_EQUALGUID(riid, EVOLUTION_GUID::IID_BlendStateProperty))
     //{
     //    *ppvObject = static_cast<BlendStateProperty *>(this);
     //    this->AddRef();
